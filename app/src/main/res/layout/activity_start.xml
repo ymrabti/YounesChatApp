@@ -7,27 +7,10 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".StartActivity">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/chat_app"
-        android:textSize="26sp"
-        android:textStyle="bold"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/login"
-        android:layout_marginTop="100dp"
-        android:background="@color/design_default_color_primary"
-        android:textColor="#fff"
-        android:text="@string/Login"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/register"
-        android:layout_marginTop="10dp"
-        android:textColor="#fff"
-        android:background="@color/design_default_color_primary"
-        android:text="@string/creer_un_compte"/>
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:contentDescription="@string/creer_un_compte"
+        android:src="@drawable/whatsappyounes"/>
 
 </LinearLayout>
