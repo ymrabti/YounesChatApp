@@ -28,8 +28,10 @@ public class StartActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);finish();
                 }
-                Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(intent);finish();
+                else {
+                    Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                    startActivity(intent);finish();
+                }
             }
         };countDownTimer.start();
     }

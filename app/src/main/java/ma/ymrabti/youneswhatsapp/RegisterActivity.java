@@ -70,7 +70,9 @@ public class RegisterActivity extends AppCompatActivity {
                         assert userid != null;
                         reference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
                         HashMap<String,String> hashMap = new HashMap<>();
-                        hashMap.put("id",userid);hashMap.put("username",username);hashMap.put("imageURL","default");
+                        hashMap.put("id", userid);
+                        hashMap.put("username", username);
+                        hashMap.put("imageURL", "default");
                         reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
