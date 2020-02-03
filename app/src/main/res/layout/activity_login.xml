@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".LoginActivity">
     <include
         android:id="@+id/toolbar"
         layout="@layout/app_bar"/>
@@ -19,20 +19,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/creer_un_compte"
+            android:text="@string/Authentifier"
             android:textSize="26sp"
             android:textStyle="bold"/>
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/user_name"
-            android:layout_marginTop="10dp"
-            app:met_floatingLabel="normal"
-            android:hint="@string/user_name"/>
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/email"
+            android:id="@+id/login_email"
             android:inputType="textEmailAddress"
             android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"
@@ -40,7 +33,7 @@
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/password"
+            android:id="@+id/login_password"
             android:inputType="textPassword"
             android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"
@@ -48,8 +41,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/creer_compte"
-            android:text="@string/creer"
+            android:id="@+id/login_creer_compte"
+            android:text="@string/Login"
             android:background="@color/colorPrimary"
             android:textColor="#fff"
             android:layout_marginTop="10dp"/>
