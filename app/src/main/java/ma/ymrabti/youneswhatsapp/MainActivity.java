@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -31,6 +32,9 @@ import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import ma.ymrabti.youneswhatsapp.Model.User;
+import ma.ymrabti.youneswhatsapp.fragments.ChatsFragment;
+import ma.ymrabti.youneswhatsapp.fragments.ContactsFragment;
+import ma.ymrabti.youneswhatsapp.fragments.StoriesFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,9 +73,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-        TableLayout tableLayout = findViewById(R.id.tab_layout);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
         ViewPager viewPager = findViewById(R.id.view_pager);
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPagerAdapter.addFragment(new ChatsFragment(),"Discussions");
+        viewPagerAdapter.addFragment(new StoriesFragment(),"Story");
+        viewPagerAdapter.addFragment(new ContactsFragment(),"Contacts");
+        viewPager.setAdapter(viewPagerAdapter);tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override
