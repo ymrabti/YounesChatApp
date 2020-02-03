@@ -41,7 +41,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/login_creer_compte"
+            android:id="@+id/login_compte"
             android:text="@string/Login"
             android:background="@color/colorPrimary"
             android:textColor="#fff"

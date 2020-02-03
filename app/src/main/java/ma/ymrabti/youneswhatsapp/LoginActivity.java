@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         email=findViewById(R.id.login_email);password=findViewById(R.id.login_password);
-        Button button_login = findViewById(R.id.login_creer_compte);
+        Button button_login = findViewById(R.id.login_compte);
         mAuth = FirebaseAuth.getInstance();
         button_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +52,10 @@ public class LoginActivity extends AppCompatActivity {
                                 Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);finish();
+                            }
+                            else {
+                                Toast.makeText(getApplicationContext(),
+                                        "You can't register with this email address or password",Toast.LENGTH_LONG).show();
                             }
                         }
                     });
