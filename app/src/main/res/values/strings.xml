@@ -9,4 +9,5 @@
     <string name="Authentifier">Authentifier</string>
     <string name="chat_app">Chat App</string>
     <string name="Succes">Succes</string>
+    <string name="log_out">Log Out</string>
 </resources>
