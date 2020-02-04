@@ -2,10 +2,8 @@ package ma.ymrabti.youneswhatsapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     assert user != null;
                     username.setText(user.getUsername());
                     if (user.getImageURL().equals("default")){
-                        circleImageView.setImageResource(R.mipmap.ic_launcher);
+                        circleImageView.setImageResource(R.drawable.pdp_mini);
                     }
                     else{
                         Glide.with(getApplicationContext()).load(user.getImageURL()).into(circleImageView);
