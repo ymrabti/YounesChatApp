@@ -6,27 +6,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MessageActivity">
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/toolbar"
-        android:background="@color/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/MenuStyle">
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/profile_image_message"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/username_message"
-            android:layout_marginStart="50dp"
-            android:text="@string/user_name"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#fff"/>
+        android:id="@+id/app_bar">
 
-    </androidx.appcompat.widget.Toolbar>
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/MenuStyle">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/profile_image_message"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/username_message"
+                android:layout_marginStart="50dp"
+                android:text="@string/user_name"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#fff"/>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycle_view_send_message"
+        android:layout_below="@id/app_bar"
+        android:layout_above="@id/button_send"/>
+
+    <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="#fff"
+        android:id="@+id/bottom_sent"
+        android:layout_alignParentBottom="true">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_message"
+            android:inputType="text"
+            android:background="@android:color/transparent"
+            android:hint="@string/envoyer_un_message"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/button_send"/>
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/button_send"
+            android:background="@drawable/send_message"
+            android:layout_alignParentEnd="true"/>
+
+    </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+
 </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
