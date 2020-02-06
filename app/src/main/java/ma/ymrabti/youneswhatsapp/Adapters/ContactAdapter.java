@@ -2,6 +2,7 @@ package ma.ymrabti.youneswhatsapp.Adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import ma.ymrabti.youneswhatsapp.MessageActivity;
 import ma.ymrabti.youneswhatsapp.Model.User;
 import ma.ymrabti.youneswhatsapp.R;
 
@@ -38,7 +39,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        User user = listContacts.get(position);
+        final User user = listContacts.get(position);
         holder.nomContact.setText(user.getUsername());
         if (user.getImageURL().equals("default")){
             holder.imageContact.setImageResource(R.drawable.avatar_mini);
@@ -46,6 +47,14 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         else {
             Glide.with(mContext).load(user.getImageURL()).into(holder.imageContact);
         }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, MessageActivity.class);
+                intent.putExtra("userid",user.getId());
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -54,10 +63,10 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView nomContact;
-        public CircleImageView imageContact;
+        TextView nomContact;
+        CircleImageView imageContact;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             nomContact = itemView.findViewById(R.id.contact_item_username);
             imageContact = itemView.findViewById(R.id.profile_pdp);
